@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=Cfg4jGitConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.coder4.lmsia.cfg4j.configuration.Cfg4jGitConfiguration
