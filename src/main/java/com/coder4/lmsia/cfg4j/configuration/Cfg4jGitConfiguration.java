@@ -1,5 +1,6 @@
 package com.coder4.lmsia.cfg4j.configuration;
 
+import com.coder4.lmsia.cfg4j.Cfg4jValueProcessor;
 import org.cfg4j.provider.ConfigurationProvider;
 import org.cfg4j.provider.ConfigurationProviderBuilder;
 import org.cfg4j.source.ConfigurationSource;
@@ -15,6 +16,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -58,6 +60,11 @@ public class Cfg4jGitConfiguration {
                 .withEnvironment(environment)
                 .withReloadStrategy(reloadStrategy)
                 .build();
+    }
+
+    @Bean
+    public Cfg4jValueProcessor createCfg4jValueProcessor() {
+        return new Cfg4jValueProcessor();
     }
 
 }

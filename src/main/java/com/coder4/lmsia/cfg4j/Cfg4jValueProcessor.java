@@ -1,5 +1,6 @@
 package com.coder4.lmsia.cfg4j;
 
+import com.coder4.lmsia.cfg4j.configuration.Cfg4jGitConfiguration;
 import org.cfg4j.provider.ConfigurationProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,6 +8,7 @@ import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.core.Ordered;
 import org.springframework.stereotype.Service;
@@ -18,8 +20,6 @@ import java.util.NoSuchElementException;
 /**
  * @author coder4
  */
-@Service
-@ConditionalOnBean(ConfigurationProvider.class)
 public class Cfg4jValueProcessor implements BeanPostProcessor, Ordered {
 
     private Logger LOG = LoggerFactory.getLogger(getClass());
